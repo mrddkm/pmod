@@ -1,0 +1,13 @@
+<?php
+
+if ($this->session->has("auth")) {
+    $auth = $this->session->get("auth");
+    $username = $auth['username'];
+    echo "Hallo selamat datang $username ";
+
+    echo $this->tag->linkTo("login/logout", "Logout");
+} else {
+    echo $this->tag->linkTo("login", "Login");
+}
+    
+    
