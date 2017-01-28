@@ -1,28 +1,18 @@
-<html>
-    <head>
-        <title>Tutorial Login</title>
-    </head>
-    <body>
-        <fieldset>
-            <legend>Sign In</legend>
-            {{ form('login/proseslogin', 'role': 'form') }}
-            <table>
-                <tr>
-                    <td> Username </td>
-                    <td> <input type="text" name="username" placeholder="User ID"/> </td>
-                </tr>
-                <tr>
-                    <td> Password </td>
-                    <td><input type="password" name="password" placeholder="Password"/></td>
-                </tr>
-                <tr>
-                    <td colspan=2><button type="submit" class="btn bg-olive btn-block">Log in</button>  </td>
-                </tr>
-                <tr>
-                    <td colspan=2>{{ content() }}</td>
-                </tr>
-            </table>
-        </form>
-    </fieldset>
-</body>
-</html>
+<div class="container">
+    {{ content() }}
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Login</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="../img/photo.png" alt="">
+                {{ form('login/proseslogin', 'role': 'form', 'class':'form-signin') }}
+                    {{ text_field("username", "class":"form-control", "placeholder":"User ID", "required":"true", "autofocus":"true") }}
+                    {{ password_field("password", "class":"form-control", "placeholder":"Password", "required":"true") }}
+                    {{ submit_button("Sign in", "class":"btn btn-lg btn-primary btn-block")}}
+                    <a href="#" class="pull-right need-help">Need help? </a>
+                    <span class="clearfix"></span>
+                {{ end_form() }}
+            </div>
+        </div>
+    </div>
+</div>

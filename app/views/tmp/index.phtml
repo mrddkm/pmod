@@ -7,7 +7,5 @@ if ($this->session->has("auth")) {
 
     echo $this->tag->linkTo("login/logout", "Logout");
 } else {
-    echo $this->tag->linkTo("login", "Login");
+    echo $this->tag->linkTo("login", "Please Login");
 }
-    
-    

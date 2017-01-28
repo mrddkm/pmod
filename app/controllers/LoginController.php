@@ -1,23 +1,29 @@
 <?php
 
-class LoginController extends Phalcon\Mvc\Controller {
+class LoginController extends ControllerBase {
+
+    public function initialize() {
+        $this->tag->setTitle("Login");
+    }
 
     public function indexAction() {
-        
+        $this->tag->prependTitle("pmod - ");
     }
 
     public function prosesloginAction() {
         if ($this->request->isPost()) {
             $username = $this->request->getPost('username');
             $password = $this->request->getPost('password');
+            
             $tbluser = TblUser::findFirst("username='$username'");
+            
             if ($tbluser) {
                 if ($password == $tbluser->password) {
                     $this->_registerSession($tbluser);
                     $this->response->redirect('index');
                 }
             }
-            echo "Username atau password salah";
+            $this->flash->error("Login Failed: You don't have access to this Application");
             return $this->dispatcher->forward(array("action" => "index"));
         }
     }
@@ -32,7 +38,7 @@ class LoginController extends Phalcon\Mvc\Controller {
 
     public function logoutAction() {
         $this->session->destroy();
-        echo "Session sudah di destroy";
+        $this->flash->success("Session sudah di destroy");
         return $this->dispatcher->forward(array("action" => "index"));
     }
 

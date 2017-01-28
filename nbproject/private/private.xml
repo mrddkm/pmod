@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group name="php-site-master">
+            <file>file:/D:/Repository_Private/pmod/app/views/tmp/index.volt</file>
+            <file>file:/D:/Repository_Private/pmod/app/controllers/LoginController.php</file>
+            <file>file:/D:/Repository_Private/pmod/app/views/login/index.volt</file>
+            <file>file:/D:/Repository_Private/pmod/public/css/login.css</file>
+            <file>file:/D:/Repository_Private/pmod/app/controllers/IndexController.php</file>
+        </group>
         <group name="pmod"/>
     </open-files>
 </project-private>
